@@ -1,0 +1,145 @@
+/* CSS Document
+ Theme Name: YouTube-Gaming_Chat_Dark
+ Copyright:  2016 ZSleyer.de
+ Version: 0.01
+ Author: ZSleyer
+ Author URI: https://ZSleyer.de/
+ use: https://gaming.youtube.com/live_chat?v=VIDEOID
+ Popout the YouTube Gaming Chat to get the VideoID/StreamID
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/*remove Background*/
+.yt-live-chat-renderer-0{
+	background:rgba(0,0,0,0.0)!important;
+}
+/*remove scrollbar*/
+::-webkit-scrollbar{
+	width:0!important;
+}
+/*Remove Panels*/
+#chat-messages > yt-live-chat-header-renderer, #action-panel > yt-live-chat-message-input-renderer{
+	display:none!important;
+}
+
+/*remove moretag*/
+#icon{
+	display:none;
+}
+
+/*remove VIP-Messages*/
+#contents > yt-live-chat-legacy-paid-message-renderer{
+	display:none;
+}
+
+/*animate*/
+#items > yt-live-chat-text-message-renderer{
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	background: rgba(35, 35, 35, 0.75)!important;
+    -webkit-animation-delay: .0s, 30.0s, 30.75s;
+    -webkit-animation-duration: 0.75s, 0.75s, 0.4s;
+    -webkit-animation-name: flipInX, flipOutX, hideanimate;
+    -webkit-animation-fill-mode: forwards, forwards, forwards;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+/*comments*/
+#content{
+    margin-bottom: -8px;
+	padding: 10px 0px 15px 0px;
+	width:100%!important;
+}
+
+/*Remove Avatar*/
+#author-photo{
+	display:none!important;
+}
+
+/* Userbadges*/
+#author-badges{
+	float: right;
+	margin-right: 7px;
+}
+
+/*Username*/
+#author-name{
+	font-size: 12pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.55)!important;
+}
+
+#author-name::after{
+	content: ":";
+}
+
+/*Usermessage*/
+#message{
+	font-size: 15pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255)!important;
+}
+
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideanimate {
+  0%   { opacity:0; }
+  100% {
+	height: 0px;
+	overflow: hidden;
+	padding: 0px;
+	border-bottom: 0px;
+	}
+}

@@ -1,0 +1,100 @@
+/* CSS Document
+ Theme Name: Tipeeestream_Donation-Goal
+ Copyright:  2016 ZSleyer.de
+ Version: 0.01
+ Author: ZSleyer
+ Author URI: https://ZSleyer.de/
+ 
+ Tipeeestream-Settings
+ LAYOUT
+ ==================================================
+ Layout Template: compact_bar
+ 
+ Progression:
+ PROGRESSION TEXT COLOR: #dd7a4c
+ HIGHLIGHTED TEXT COLOR: #dd7a4c
+ FILL COLOR: #90d8a4
+ 
+ Font:
+ FONT FAMILY: Oswald
+ LAYOUT FONT WEIGHT: 900
+ 
+ Text shadow:
+ SHADOW THICKNESS: 0
+ OUTLINE MODE: OFF
+ SHADOW COLOR: #404040
+ 
+*/
+
+/* Bar and text
+================================================== */
+.gauge-bar{
+    height:74px;
+}
+.gauge-bg {
+    /* bar background */
+    height:100%!important;
+}
+.gauge-fill {
+    /* bar fill */
+    height: 100%!important;
+    border-radius: 4px;
+}
+.gauge-text span {
+    font-size: 30px;
+}
+.donation-goal{
+    vertical-align: top;
+}
+
+.message{
+    font-size: 30px!important;
+    position: relative;
+    top: -8px;
+}
+
+/* Success Event
+================================================== */
+.text{
+	top: 7px;
+    position: relative;
+}
+
+.gauge-fill::after {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #FFFFFF;
+  border-radius: 0.28571429rem;
+  -webkit-animation: progress-active 2s ease infinite;
+  -moz-animation: progress-active 2s ease infinite;
+  animation: progress-active 2s ease infinite;
+}
+
+@-webkit-keyframes progress-active {
+  0% {
+    opacity: 0.3;
+    width: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+@keyframes progress-active {
+  0% {
+    opacity: 0.3;
+    width: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}

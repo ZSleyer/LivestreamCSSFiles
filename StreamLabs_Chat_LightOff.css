@@ -1,0 +1,91 @@
+/* CSS Document
+ Theme Name: StreamLabs_Chat_LightOn
+ Copyright:  2016 ZSleyer.de
+ Version: 0.01
+ Author: ZSleyer
+ Author URI: https://ZSleyer.de/
+ Tipp: Text-Color auf #ffffff
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	background: transparent!important;
+    color: $text_color;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+a {
+    color: #5b5b5b!important;
+    text-decoration: none!important;
+}
+
+#log {
+	font: 500 $font_size 'Roboto', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px 15px;
+	padding-top: 100px;
+}
+
+#log>div {
+    margin-bottom: 0px;
+    background: rgba(35, 35, 35, 0.75)!important;
+    border-bottom: 1px solid rgba(255,255,255,0.1));
+    padding: 10px 20px 10px;
+    animation: flipInX 500ms ease, fadeOutUp 1s ease $message_hide_delay forwards;
+    -webkit-animation: flipInX 700ms ease, fadeOutUp 1s ease $message_hide_delay forwards;
+}
+
+#log>div.deleted {
+    visibility: hidden;
+}
+
+.meta {
+    display: block;
+    line-height: 1em;
+}
+
+.message {
+    word-wrap: break-word;
+    line-height: 1.5em;
+	margin-top: -2px;
+}
+
+.name {
+    text-transform: uppercase;
+    font-size: 10pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.colon {
+    display: none;
+}
+
+.badge {
+    float: right;
+    padding-left: 5px;
+    height: 0.8em;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0.1em;
+    background-size: contain;
+}
+
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+    vertical-align: top;
+}

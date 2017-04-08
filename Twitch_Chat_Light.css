@@ -1,0 +1,180 @@
+/* CSS Document
+ Theme Name: Twitch_Chat_LightOff
+ Copyright:  2016 ZSleyer.de
+ Version: 0.021
+ Author: ZSleyer
+ Author URI: https://ZSleyer.de/
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+*, .chat-container, .ember-chat-container,body, .ember-chat-container.dark{
+	background:transparent;
+}
+
+.ember-chat .chat-messages{
+	bottom:0px!important;
+}
+
+.chat-header{
+	display:none;
+}
+
+.ember-chat .chat-room{
+	top:0px
+}
+
+.tse-scrollbar, .chat-room-list{
+	display:none!important;
+}
+
+.chat-interface{
+	display:none;
+}
+
+.tse-content{
+	padding: 0px 0px!important;
+}
+
+
+.ember-chat .chat-messages .chat-line {
+    font-size: 20pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    line-height: 20px;
+    padding: 11px 25px;
+    margin: 0px;
+    word-wrap: break-word;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+	background: rgba(255, 255, 255, 0.75)!important;
+	list-style-position: unset;
+	-webkit-animation-delay: .0s, 10.0s, 10.75s;
+    -webkit-animation-duration: 0.75s, 0.75s, 0.4s;
+    -webkit-animation-name: flipInX, flipOutX, hideanimate;
+    -webkit-animation-fill-mode: forwards, forwards, forwards;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+.badges{
+	float:right!important;
+}
+
+.badges .badge{
+	margin:0 auto;
+	padding: 2px;
+    height: auto;
+    width: 20px;
+}
+.from{
+	background: transparent!important;
+}
+
+.special-message .system-msg {
+    color: #a49fad;
+    margin-bottom: 4px;
+}
+
+.ember-chat .chat-messages .chat-line .from, .ember-chat .chat-messages .chat-line .to{
+    display: block!important;
+	font-size: 10pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+	margin-bottom: 4px;
+}
+
+.colon{
+	display:none;
+}
+
+.message{
+    color: #fff;
+    font-size: 20pt;
+	background: transparent!important;
+	color: rgb(70, 70, 70)!important;
+	line-height: 25px!important;
+}
+.chat-lines .admin{
+	display:none;
+}
+
+.noty_bar{
+	display:none;
+}
+
+.chat-lines{
+	padding: 0px 0!important;
+}
+
+/*FUCKTHECHERRINGPOLICE*/
+.pinned-cheers__message-wrapper, .pinned-cheers-intro__viewer, .bits-card--standard, .bits-card--promo {
+	display:none!important;
+}
+
+a {
+    color: #5b5b5b!important;
+    text-decoration: none!important;
+}
+
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideanimate {
+  0%   { opacity:0; }
+  100% {
+	margin: 0px 0px 0px 0px;
+	height: 0px;
+	overflow: hidden;
+	padding: 0px;
+	border:none;
+	}
+}

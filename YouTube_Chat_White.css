@@ -1,0 +1,190 @@
+/* CSS Document
+ Theme Name: YouTube_Chat_White
+ Copyright:  2016 ZSleyer.de
+ Version: 0.01
+ Author: ZSleyer
+ Author URI: https://ZSleyer.de/
+ use: https://www.youtube.com/live_chat?v=VIDEOID
+ Popout the YouTube Chat to get the VideoID/StreamID
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px auto;
+    overflow: hidden;
+}
+.live-chat-controls-container,
+#live-comments-controls {
+    display: none!important;
+}
+
+/*Hide scrollbar*/
+body,
+.live-chat-widget #comments-scroller {
+    overflow: hidden !important;
+    border: none;
+	
+}
+/*remove gaming-promo*/
+#live-comments-section > div.gaming-promo{
+	display:none;
+}
+
+/*Body background color*/
+body,
+.live-chat-page {
+    background: rgba(0,0,0,0.0);
+}
+
+#content > div{
+background: transparent!important;
+}
+
+/*fix comment padding*/
+.content {
+    padding-top: 10px !important;
+}
+
+/*Comment inline*/
+.byline {
+    display: inline !important;
+}
+
+/*Lock chatroom to top*/
+#live-comments-section {
+    margin-top: -15px!important;
+}
+
+/*Nutzername*/
+.yt-user-name {
+    font-size: 12pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(90, 90, 90)!important;
+}
+
+.yt-user-name::after{
+	content: ": ";
+}
+
+/* Comment*/
+.comment-text {
+    font-size: 15pt;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-left: -5px;
+    color: rgb(70, 70, 70)!important;
+}
+
+/* Kommentare*/
+.comment {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 0px;
+    background: rgba(255, 255, 255, 0.75)!important;
+    -webkit-animation-delay: .0s, 30.0s, 30.75s;
+    -webkit-animation-duration: 0.75s, 0.75s, 0.4s;
+    -webkit-animation-name: flipInX, flipOutX, hideanimate;
+    -webkit-animation-fill-mode: forwards, forwards, forwards;
+    -webkit-animation-timing-function: ease-in-out;
+}
+.comment .alternate-row{
+	background: rgba(45, 45, 45, 0.75);
+}
+/*Akzentbar*/
+.live-chat-widget .accent-bar{
+	width: 100%!important;
+    height: 3px!important;
+	opacity: 0.75!important;
+}
+
+/*SYMBOLE*/
+.author .yt-channel-title-icon-verified{
+	float: right;
+	margin-right: 7px;
+}
+.badges{
+	float:right;
+	margin-top: -4px;
+	margin-right: 7px;
+}
+
+/*SCROLLNOTIFICATION*/
+#live-comments-setting-bottom-scroll{
+	display: none;
+}
+
+/*REMOVE ACTION MENU*/
+.actions-menu{
+	display:none!important;
+}
+
+/*REMOVE AVA*/
+.comment a img{
+	display:none!important;
+}
+.content{
+	margin-left: -40px;
+}
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideanimate {
+  0%   { opacity:0; }
+  100% {
+	height: 0px;
+	overflow: hidden;
+	padding: 0px;
+	border-bottom: 0px;
+	}
+}
