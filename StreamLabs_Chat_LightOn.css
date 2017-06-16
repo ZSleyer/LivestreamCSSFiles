@@ -1,91 +1,167 @@
 /* CSS Document
  Theme Name: StreamLabs_Chat_LightOn
- Copyright:  2016 ZSleyer.de
- Version: 0.01
+ Copyright:  2017 ZSleyer.de
+ Version: 0.02
  Author: ZSleyer
  Author URI: https://ZSleyer.de/
- Tipp: Text-Color auf #484848
+ WICHTIG: Text-Color auf #484848 & Hide Message After auf 65s stellen!
 */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
 	background: transparent!important;
-    color: $text_color;
+	color: $text_color;
 }
 
 html, body {
-    height: 100%;
-    overflow: hidden;
+	height: 100%;
+	overflow: hidden;
 }
 
 a {
-    color: #5b5b5b!important;
-    text-decoration: none!important;
+	color: #5b5b5b!important;
+	text-decoration: none!important;
 }
 
 #log {
 	font: 500 $font_size 'Roboto', sans-serif;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 10px 15px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 0px 15px;
 	padding-top: 100px;
 }
 
 #log>div {
-    margin-bottom: 0px;
-    background: rgba(255, 255, 255, 0.45)!important;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding: 10px 20px 10px;
-    animation: flipInX 500ms ease, fadeOutUp 1s ease $message_hide_delay forwards;
-    -webkit-animation: flipInX 700ms ease, fadeOutUp 1s ease $message_hide_delay forwards;
+	margin-bottom: 0px;
+	background: rgba(255, 255, 255, 0.85)!important;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 10px 20px 10px;
+	-webkit-animation-delay: .0s, 60.0s, 60.75s;
+	-webkit-animation-duration: 0.4s, 0.4s, 0.4s;
+	-webkit-animation-name: flipInX, flipOutX, hideanimate;
+	-webkit-animation-fill-mode: forwards, forwards, forwards;
+	-webkit-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-moz-animation-delay: .0s, 60.0s, 60.75s;
+	-moz-animation-duration: 0.4s, 0.4s, 0.4s;
+	-moz-animation-name: flipInX, flipOutX, hideanimate;
+	-moz-animation-fill-mode: forwards, forwards, forwards;
+	-moz-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-animation-delay: .0s, 60.0s, 60.75s;
+	-animation-duration: 0.4s, 0.4s, 0.4s;
+	-animation-name: flipInX, flipOutX, hideanimate;
+	-animation-fill-mode: forwards, forwards, forwards;
+	-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
 }
 
 #log>div.deleted {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .meta {
-    display: block;
-    line-height: 1em;
+	display: block;
+	line-height: 1em;
 }
 
 .message {
-    word-wrap: break-word;
-    line-height: 1.5em;
+	word-wrap: break-word;
+	line-height: 1.5em;
 	margin-top: -2px;
 }
 
 .name {
-    text-transform: uppercase;
-    font-size: 10pt;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	font-size: 10pt;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
 }
 
 .colon {
-    display: none;
+	display: none;
 }
 
 .badge {
-    float: right;
-    padding-left: 5px;
-    height: 0.8em;
+	float: right;
+	padding-left: 5px;
+	height: 0.8em;
 }
 
 #log .emote {
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 0.1em;
-    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 0.1em;
+	background-size: contain;
 }
 
 #log .emote img {
-    display: inline-block;
-    height: 1em;
+	display: inline-block;
+	height: 1em;
+	opacity: 0;
+	vertical-align: top;
+}
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     opacity: 0;
-    vertical-align: top;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideanimate {
+  0%   { opacity:0; }
+  100% {
+	margin: 0px 0px 0px 0px;
+	height: 0px;
+	overflow: hidden;
+	padding: 0px;
+	border:none;
+	}
 }
