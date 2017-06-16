@@ -1,7 +1,7 @@
 /* CSS Document
  Theme Name: YouTube-Gaming_Chat_Dark
  Copyright:  2016 ZSleyer.de
- Version: 0.01
+ Version: 0.02
  Author: ZSleyer
  Author URI: https://ZSleyer.de/
  use: https://gaming.youtube.com/live_chat?v=VIDEOID
@@ -11,6 +11,10 @@
 /*remove Background*/
 .yt-live-chat-renderer-0{
 	background:rgba(0,0,0,0.0)!important;
+}
+/*remove errors*/
+#items > yt-live-chat-server-error-message:nth-child(89){
+	display:none!important;
 }
 /*remove scrollbar*/
 ::-webkit-scrollbar{
@@ -35,16 +39,16 @@
 #items > yt-live-chat-text-message-renderer{
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	background: rgba(35, 35, 35, 0.75)!important;
-    -webkit-animation-delay: .0s, 30.0s, 30.75s;
-    -webkit-animation-duration: 0.75s, 0.75s, 0.4s;
-    -webkit-animation-name: flipInX, flipOutX, hideanimate;
-    -webkit-animation-fill-mode: forwards, forwards, forwards;
-    -webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: .0s, 60.0s, 60.4s;
+	-webkit-animation-duration: 0.4s, 0.4s, 0.0s;
+	-webkit-animation-name: flipInX, flipOutX, hideanimate;
+	-webkit-animation-fill-mode: forwards, forwards, forwards;
+	-webkit-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
 }
 
 /*comments*/
 #content{
-    margin-bottom: -8px;
+	margin-bottom: -8px;
 	padding: 10px 0px 15px 0px;
 	width:100%!important;
 }
@@ -63,21 +67,30 @@
 /*Username*/
 #author-name{
 	font-size: 12pt;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    color: rgba(255, 255, 255, 0.55)!important;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	color: #D2691E!important;
+	display:block;
+	text-transform: uppercase;
+	font-size: 10pt!important;
+	font-weight: 500!important;
+	font-family: 'Roboto', sans-serif!important;
 }
 
 #author-name::after{
-	content: ":";
+	content: "";
 }
 
 /*Usermessage*/
 #message{
 	font-size: 15pt;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(255, 255, 255)!important;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(255, 255, 255)!important;
+	line-height:1.2em!important;
+	font-size: 26px!important;
+	font-weight: 500!important;
+	font-family: 'Roboto', sans-serif!important;
 }
 
 
