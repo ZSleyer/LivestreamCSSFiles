@@ -39,10 +39,10 @@
 #items > yt-live-chat-text-message-renderer{
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	background: rgba(255, 255, 255, 0.75)!important;
-    -webkit-animation-delay: .0s, 60.0s, 60.4s;
-    -webkit-animation-duration: 0.4s, 0.4s, 0.0s;
-    -webkit-animation-name: flipInX, flipOutX, hideanimate;
-    -webkit-animation-fill-mode: forwards, forwards, forwards;
+    	-webkit-animation-delay: .0s, 60.0s, 60.4s;
+    	-webkit-animation-duration: 0.4s, 0.4s, 0.0s;
+    	-webkit-animation-name: flipInX, flipOutX, hideanimate;
+    	-webkit-animation-fill-mode: forwards, forwards, forwards;
 	-webkit-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
 }
 
@@ -67,14 +67,14 @@
 /*Username*/
 #author-name{
 	font-size: 12pt;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    color: #D2691E!important;
+    	font-weight: 500;
+   	font-family: 'Roboto', sans-serif;
+   	color: #D2691E!important;
 	display:block;
 	text-transform: uppercase;
-    font-size: 10pt!important;
-    font-weight: 500!important;
-    font-family: 'Roboto', sans-serif!important;
+	font-size: 10pt!important;
+    	font-weight: 500!important;
+    	font-family: 'Roboto', sans-serif!important;
 }
 
 #author-name::after{
@@ -84,14 +84,13 @@
 /*Usermessage*/
 #message{
 	font-size: 15pt;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(70, 70, 70)!important;
-    color: rgb(70, 70, 70) !important;
-    line-height:1.2em!important;
-    font-size: 26px!important;
-    font-weight: 500!important;
-    font-family: 'Roboto', sans-serif!important;
+    	font-weight: 500;
+    	font-family: 'Roboto', sans-serif;
+    	color: rgb(70, 70, 70)!important;
+    	line-height:1.2em!important;
+    	font-size: 26px!important;
+    	font-weight: 500!important;
+    	font-family: 'Roboto', sans-serif!important;
 }
 
 
