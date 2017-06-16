@@ -1,7 +1,7 @@
 /* CSS Document
  Theme Name: StreamLabs_Chat_LightOn
  Copyright:  2016 ZSleyer.de
- Version: 0.01
+ Version: 0.02
  Author: ZSleyer
  Author URI: https://ZSleyer.de/
  Tipp: Text-Color auf #ffffff
@@ -31,17 +31,30 @@ a {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    padding: 10px 15px;
+    padding: 0px 15px;
 	padding-top: 100px;
 }
 
 #log>div {
-    margin-bottom: 0px;
-    background: rgba(35, 35, 35, 0.75)!important;
-    border-bottom: 1px solid rgba(255,255,255,0.1));
-    padding: 10px 20px 10px;
-    animation: flipInX 500ms ease, fadeOutUp 1s ease $message_hide_delay forwards;
-    -webkit-animation: flipInX 700ms ease, fadeOutUp 1s ease $message_hide_delay forwards;
+	margin-bottom: 0px;
+	background: rgba(35, 35, 35, 0.75)!important;
+	border-bottom: 1px solid rgba(255,255,255,0.1));
+	padding: 10px 20px 10px;
+	-webkit-animation-delay: .0s, 60.0s, 60.75s;
+	-webkit-animation-duration: 0.4s, 0.4s, 0.4s;
+	-webkit-animation-name: flipInX, flipOutX, hideanimate;
+	-webkit-animation-fill-mode: forwards, forwards, forwards;
+	-webkit-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-moz-animation-delay: .0s, 60.0s, 60.75s;
+	-moz-animation-duration: 0.4s, 0.4s, 0.4s;
+	-moz-animation-name: flipInX, flipOutX, hideanimate;
+	-moz-animation-fill-mode: forwards, forwards, forwards;
+	-moz-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	-animation-delay: .0s, 60.0s, 60.75s;
+	-animation-duration: 0.4s, 0.4s, 0.4s;
+	-animation-name: flipInX, flipOutX, hideanimate;
+	-animation-fill-mode: forwards, forwards, forwards;
+	-animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
 }
 
 #log>div.deleted {
@@ -88,4 +101,67 @@ a {
     height: 1em;
     opacity: 0;
     vertical-align: top;
+}
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideanimate {
+  0%   { opacity:0; }
+  100% {
+	margin: 0px 0px 0px 0px;
+	height: 0px;
+	overflow: hidden;
+	padding: 0px;
+	border:none;
+	}
 }
