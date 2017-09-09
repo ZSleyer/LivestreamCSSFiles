@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Stream-Info</title>
+		<style>
+			@charset "utf-8";
+			/* latin-ext */
+			@font-face {
+			  font-family: 'Roboto';
+			  font-style: normal;
+			  font-weight: 400;
+			  src: local('Roboto'), local('Roboto-Regular'), url(/font/roboto-latin-ext.woff2) format('woff2');
+			  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+			}
+			/* latin */
+			@font-face {
+			  font-family: 'Roboto';
+			  font-style: normal;
+			  font-weight: 400;
+			  src: local('Roboto'), local('Roboto-Regular'), url(/font/roboto-latin.woff2) format('woff2');
+			  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+			}
+			html,
+			body {
+				position: relative;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: rgba(0, 0, 0, 0);
+				margin: 0px auto;
+				overflow: hidden;
+			}
+			body {
+				color: #fff;
+				font-family: 'Roboto', sans-serif;
+			}
+
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			#stream-info{
+				width: 677px;
+				height: 50px;
+				padding: 13px;
+				animation: einblenden 0.3s forwards;
+				animation-delay: 4.3s;
+				opacity: 0;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+			@keyframes einblenden {
+				0%   {opacity:0.0;}
+				100% {opacity:1.0;}
+			}
+			#stream-info-text{
+			    /*margin-top: 32px;*/
+				position: absolute;
+				animation: bewegen 0.3s forwards;
+				animation-delay: 4.3s;
+				font-size: 25pt;
+				text-align: -webkit-center;
+				width: 677px;
+				font-variant: small-caps;
+			}
+			@keyframes bewegen {
+				0%   {
+					transform: translateY(17px);
+					animation-timing-function: ease-out;
+				}
+				100% {
+					transform: translateY(-10px);
+					animation-timing-function: ease-in;
+				}
+			}
+			#stream-info-text::after { 
+				content: "Remember this";
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="stream-info">
+			<span id="stream-info-text"></span>
+		</div>
+	</body>
+</html>
